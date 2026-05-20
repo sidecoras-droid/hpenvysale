@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venta HP Envy 13 - Estado Impecable</title>
+    <title>Catálogo de Tecnología Premium | Tech for Sale</title>
+    
+    <!-- Tailwind CSS v3 CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: M PLUS 1 para dar la estética Apple Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        royal: '#1e40af',
-                        'royal-light': '#3b82f6',
+                        apple: {
+                            dark: '#1d1d1f',
+                            light: '#f5f5f7',
+                            link: '#0066cc'
+                        },
+                        tech: {
+                            50: '#f0f7ff',
+                            100: '#e0f0fe',
+                            500: '#0066cc',
+                            600: '#0071e3',
+                            700: '#0055b3',
+                            800: '#0a2540',
+                            950: '#030f26',
+                        }
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        sans: ['"M PLUS 1"', 'sans-serif'],
                     }
                 }
             }
@@ -25,150 +45,792 @@
     </script>
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
+            font-family: "M PLUS 1", sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
         }
-        .accent-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        
+        /* Efecto de Desenfoque Apple */
+        .apple-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
-        .image-card {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* Ocultar barra de desplazamiento */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .image-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px-40px rgba(0,0,0,0.08);
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        @media (max-width: 640px) {
-            .image-card:hover {
-                transform: none;
-            }
+
+        /* Suavizado general */
+        .pastel-section {
+            transition: background-color 0.6s ease;
+        }
+
+        /* Animación fluida de Carrusel Infinito de galería */
+        @keyframes marquee-ltr {
+            0% { transform: translate3d(-33.3333%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+        .animate-marquee-ltr {
+            display: flex;
+            width: max-content;
+            animation: marquee-ltr 50s linear infinite;
+        }
+        .animate-marquee-ltr:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-apple-dark">
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-            <div class="text-lg sm:text-xl font-extrabold tracking-tighter uppercase shrink-0">
-                HP ENVY <span class="text-royal">13</span>
-            </div>
-            <div class="flex items-center gap-2 sm:gap-6">
-                <span class="hidden lg:block text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">
-                    CDMX / Entrega Personal
-                </span>
-                <a href="https://wa.me/5533501576" class="bg-royal text-white px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm hover:shadow-lg transition-all active:scale-95">
-                    $4,800 MXN
-                </a>
-            </div>
+    <!-- Global Apple Header Context Bar -->
+    <header class="bg-black/95 text-white h-12 flex items-center justify-between px-6 z-50 relative text-xs">
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-normal tracking-widest text-[#a1a1a6] text-[10px]">VENTA DE TECNOLOGÍA PERSONAL</span>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <header class="pt-8 sm:pt-16 pb-12 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div class="order-2 lg:order-1">
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-4 sm:mb-6 leading-[1.1]">
-                    Metálica. <br>Delgada. <span class="text-royal italic">Única.</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-slate-500 leading-relaxed mb-6 sm:mb-8">
-                    Ultrabook HP Envy 13-d001la. Construcción premium en aluminio plata, pantalla IPS Full HD y audio de alta fidelidad Bang & Olufsen.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                    <span class="px-3 sm:px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-[10px] sm:text-xs font-bold border border-slate-200 uppercase whitespace-nowrap">Core i3 6ta Gen</span>
-                    <span class="px-3 sm:px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-[10px] sm:text-xs font-bold border border-slate-200 uppercase whitespace-nowrap">128GB SSD</span>
-                    <span class="px-3 sm:px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-[10px] sm:text-xs font-bold border border-slate-200 uppercase whitespace-nowrap">1.36 KG</span>
-                </div>
-            </div>
-            <div class="relative order-1 lg:order-2">
-                <div class="absolute -inset-2 sm:-inset-4 bg-royal/5 rounded-2xl sm:rounded-[3rem] -z-10"></div>
-                <img src="img/hp01.webp" alt="HP Envy Frontal" class="rounded-xl sm:rounded-2xl shadow-xl border border-slate-200 w-full" onerror="this.src='https://placehold.co/800x600/1e40af/white?text=HP+Envy+13'">
-            </div>
+        <div class="flex items-center gap-4">
+            <span class="text-[#a1a1a6] hidden sm:inline text-[11px]">Entrega Directa • CDMX 2026</span>
+            <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20los%20equipos" target="_blank" class="text-white hover:text-apple-link transition-colors flex items-center gap-1">
+                WhatsApp Directo <i class="fa-solid fa-external-link text-[10px]"></i>
+            </a>
         </div>
     </header>
 
-    <!-- Gallery Grid -->
-    <section class="py-12 sm:py-20 bg-white border-y border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-8 sm:mb-12">
-            <h2 class="text-[10px] sm:text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-2 sm:mb-4">Inspección de Detalle</h2>
-            <p class="text-2xl sm:text-3xl font-bold">12 fotos reales del equipo actual.</p>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            <script>
-                for(let i=1; i<=12; i++) {
-                    const num = String(i).padStart(2, '0');
-                    document.write(`
-                        <div class="image-card group cursor-pointer overflow-hidden rounded-lg bg-slate-50 border border-slate-200 aspect-[4/3] sm:aspect-auto" onclick="openLightbox('img/hp${num}.webp')">
-                            <img src="img/hp${num}.webp" class="w-full h-full sm:h-64 object-cover transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/400x600/f1f5f9/64748b?text=HP+View+${num}'">
-                        </div>
-                    `);
-                }
-            </script>
-        </div>
-    </section>
-
-    <!-- Feature Highlights -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <!-- Batería -->
-            <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-emerald-50 border border-emerald-100 flex flex-col h-full">
-                <i class="fa-solid fa-battery-full text-emerald-500 text-2xl sm:text-3xl mb-4 sm:mb-6"></i>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Batería Nueva</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Reemplazada en <strong>julio 2025</strong>. Ofrece una autonomía real de 4 a 5 horas, eliminando el desgaste común de los equipos usados.
-                </p>
+    <!-- Top Sticky Apple Header & Sub-Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/85 border-b border-slate-200/80 apple-blur shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-sm font-black tracking-tight text-apple-dark">
+                Catálogo Premium
             </div>
-            <!-- Audio -->
-            <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-blue-50 border border-blue-100 flex flex-col h-full">
-                <i class="fa-solid fa-music text-blue-500 text-2xl sm:text-3xl mb-4 sm:mb-6"></i>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Bang & Olufsen</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                    Sistema de sonido dual certificado por ingenieros daneses. Nitidez excepcional para audiófilos y profesionales del streaming.
-                </p>
-            </div>
-            <!-- Estado -->
-            <div class="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-amber-50 border border-amber-100 flex flex-col h-full sm:col-span-2 lg:col-span-1">
-                <i class="fa-solid fa-circle-info text-amber-500 text-2xl sm:text-3xl mb-4 sm:mb-6"></i>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Estado del Equipo</h3>
-                <p class="text-slate-600 text-sm leading-relaxed italic">
-                    "Muy buen estado. Único raspón de 1cm en la esquina superior izquierda de la tapa. Pantalla impecable sin ningún arañazo."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-20 sm:py-32 bg-slate-900 text-white text-center px-4 sm:px-6">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tighter mb-8 sm:mb-10 lg:italic">Tu próxima estación de trabajo administrativa.</h2>
-            <p class="text-slate-400 text-sm sm:text-lg mb-8 sm:mb-12 uppercase tracking-widest font-bold">WhatsApp: 55.3350.1576</p>
             
-            <a href="https://wa.me/5533501576" class="inline-flex items-center justify-center gap-3 sm:gap-4 accent-gradient text-white font-black py-4 px-8 sm:py-6 sm:px-16 rounded-xl sm:rounded-2xl text-xl sm:text-2xl shadow-2xl hover:scale-105 transition-transform w-full sm:w-auto">
-                <i class="fa-brands fa-whatsapp text-3xl sm:text-4xl"></i>
-                COMPRAR POR $4,800
+            <!-- Desktop menu -->
+            <div class="hidden xl:flex items-center gap-6 text-[12.6px] text-slate-500 font-medium">
+                <a href="#hp-envy" class="hover:text-apple-link transition-colors">HP Envy 13</a>
+                <a href="#stf-soundbar" class="hover:text-apple-link transition-colors">Soundbar STF</a>
+                <a href="#asus-2k" class="hover:text-apple-link transition-colors">ASUS 27"</a>
+                <a href="#lg-4k" class="hover:text-apple-link transition-colors">LG 27" 4K</a>
+                <a href="#tab-s9" class="hover:text-apple-link transition-colors">Tab S9 Ultra</a>
+                <a href="#s23-fe" class="hover:text-apple-link transition-colors">Galaxy S23 FE</a>
+                <a href="#pc-ofimatica" class="hover:text-apple-link transition-colors">PC Ofimática</a>
+                <a href="#pc-gamer" class="hover:text-apple-link transition-colors">PC Gamer</a>
+                <a href="#pc-arquitectura" class="hover:text-apple-link transition-colors">PC Arquitectura</a>
+            </div>
+
+            <!-- WhatsApp Direct CTA button (#25D366) -->
+            <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20los%20equipos" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs lg:text-sm px-4.5 py-2.5 rounded-full font-bold transition-all whitespace-nowrap shadow-md hover:shadow-lg flex items-center gap-1.5 active:scale-95">
+                <i class="fa-brands fa-whatsapp text-sm"></i> 55 3350 1576
             </a>
-            
-            <div class="mt-12 sm:mt-20 flex flex-wrap justify-center gap-4 sm:gap-8 text-[9px] sm:text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-slate-500">
-                <span class="bg-slate-800/50 px-2 py-1 rounded">Caja Original</span>
-                <span class="bg-slate-800/50 px-2 py-1 rounded">Cargador Original</span>
-                <span class="bg-slate-800/50 px-2 py-1 rounded">Entrega Inmediata</span>
+        </div>
+
+        <!-- Universal Mobile Horizontal Scroller Menu -->
+        <div class="xl:hidden flex gap-2.5 overflow-x-auto px-6 py-3 text-xs border-t border-slate-100 no-scrollbar whitespace-nowrap text-slate-500 bg-slate-50/50">
+            <a href="#hp-envy" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">HP Envy 13</a>
+            <a href="#stf-soundbar" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">Soundbar STF</a>
+            <a href="#asus-2k" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">ASUS 27"</a>
+            <a href="#lg-4k" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">LG 27" 4K</a>
+            <a href="#tab-s9" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">Tab S9 Ultra</a>
+            <a href="#s23-fe" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">Galaxy S23 FE</a>
+            <a href="#pc-ofimatica" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">PC Ofimática</a>
+            <a href="#pc-gamer" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">PC Gamer</a>
+            <a href="#pc-arquitectura" class="bg-white/80 border border-slate-200/60 px-3.5 py-1.5 rounded-full hover:text-apple-link transition-colors shrink-0">PC Arquitectura</a>
+        </div>
+    </nav>
+
+    <!-- HERO SHOWCASE BANNER -->
+    <div id="hero-banner" class="relative min-h-[480px] md:min-h-[60vh] w-full flex items-center justify-center bg-cover bg-center overflow-hidden transition-all duration-700 select-none" style="background-image: linear-gradient(to top, rgba(29, 29, 31, 0.95) 0%, rgba(29, 29, 31, 0.3) 50%, rgba(29, 29, 31, 0.75) 100%), url('documents/proyectos-web/sale-hp/img/banner01.webp');">
+        <!-- Image Fallback check -->
+        <img src="documents/proyectos-web/sale-hp/img/banner01.webp" alt="Detection" class="hidden" onerror="this.onerror=null; document.getElementById('hero-banner').style.backgroundImage='linear-gradient(to top, rgba(29, 29, 31, 0.95), rgba(15, 23, 42, 0.8)), url(\'img/banner01.webp\')';">
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 flex flex-col items-center justify-center text-center">
+            <!-- Subtle Badge tag -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 mb-5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-[10px] md:text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-solid fa-sparkles text-amber-400"></i> Showcase Exclusivo
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-none select-none drop-shadow-lg">
+                Tech for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-indigo-300">Sale</span>
+            </h1>
+
+            <!-- Secondary Slgolan Subtitle -->
+            <p class="mt-6 text-lg md:text-2xl text-[#f5f5f7] max-w-2xl font-light tracking-wide leading-relaxed drop-shadow-md px-4">
+                Hasta donde vas a llegar hoy.
+            </p>
+
+            <!-- CTA controls -->
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md px-6">
+                <a href="#hp-envy" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-slate-950 hover:bg-slate-100 font-bold text-xs md:text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+                    Explorar catálogo <i class="fa-solid fa-arrow-down animate-bounce text-xs"></i>
+                </a>
+                <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20los%20equipos" target="_blank" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs md:text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Trato Directo CDMX
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Modal Lightbox -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-white/95 hidden flex items-center justify-center p-4" onclick="this.classList.add('hidden')">
-        <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl">
+        <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#f5f5f7] to-transparent pointer-events-none"></div>
     </div>
 
+    <!-- Quick Features Strip -->
+    <div class="bg-white py-8 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div class="flex flex-col items-center p-3 space-y-2">
+                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                    <i class="fa-solid fa-shield-circle-check text-blue-600"></i>
+                </div>
+                <h4 class="font-bold text-sm text-slate-800">Transparencia Total</h4>
+                <p class="text-xs text-slate-500 max-w-xs">Declaramos el estado estético real detallado de cada equipo.</p>
+            </div>
+            <div class="flex flex-col items-center p-3 space-y-2 border-y sm:border-y-0 sm:border-x border-slate-100">
+                <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
+                    <i class="fa-solid fa-handshake text-emerald-600"></i>
+                </div>
+                <h4 class="font-bold text-sm text-slate-800">Entrega Personal CDMX</h4>
+                <p class="text-xs text-slate-500 max-w-xs">Punto de encuentro seguro a convenir para revisión mutua del equipo.</p>
+            </div>
+            <div class="flex flex-col items-center p-3 space-y-2">
+                <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
+                    <i class="fa-solid fa-box-open text-purple-600"></i>
+                </div>
+                <h4 class="font-bold text-sm text-slate-800">Empaques Originales</h4>
+                <p class="text-xs text-slate-500 max-w-xs">Los artículos cuentan con cajas, accesorios originales y componentes de fábrica.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERTICAL CATALOG -->
+    <main class="w-full">
+
+        <!-- PRODUCT 1: HP Envy Notebook 13 (Baby Blue pastel) -->
+        <section id="hp-envy" class="pastel-section bg-[#e0f2fe] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+                    <div>
+                        <span class="text-xs font-bold text-apple-link uppercase tracking-widest block mb-2">Flagship Portable</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none mb-6">
+                            HP Envy <span class="text-tech-500 italic font-semibold">Ultrabook</span> 13
+                        </h2>
+                        
+                        <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs mb-8">
+                            <span class="text-4xl font-extrabold text-[#1d1d1f]">$4,800</span>
+                            <span class="text-xs font-bold text-slate-500">MXN</span>
+                        </div>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light mb-8">
+                            Este modelo específico se distingue por su extrema delgadez y construcción en metal Premium de aleación de aluminio. Ideal para el hogar y para estudiantes o trabajo administrativo que requiera estabilidad actual.
+                        </p>
+                        
+                        <!-- Technical Specs Verbatim layout -->
+                        <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-white/90 shadow-xs space-y-3.5">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-3">
+                                Especificaciones Técnicas
+                            </h4>
+                            <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Año de Fabricación</span><span class="font-semibold text-right">2015</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Procesador</span><span class="font-semibold text-right text-apple-dark">Intel Core i3-6100U (6ª Gen) a 2.30 GHz (2C/3MB)</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Memoria RAM</span><span class="font-semibold text-right text-apple-dark">4 GB LPDDR3L SDRAM (Integrada, no expandible)</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Almacenamiento</span><span class="font-semibold text-right text-apple-dark">SSD mSATA de 128 GB</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Pantalla</span><span class="font-semibold text-right text-apple-dark">13.3" IPS LED Full HD (1920x1080) 166 ppi, 16:9</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Gráficos</span><span class="font-semibold text-right text-apple-dark">Intel HD Graphics 520</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Audio</span><span class="font-semibold text-right text-apple-dark">Bang & Olufsen Dual</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Puertos</span><span class="font-semibold text-right text-apple-dark">3x USB 3.0 (1 Boost), 1x HDMI, Audio Combo, SD Reader</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Seguridad</span><span class="font-semibold text-right text-apple-dark">Huella Digital HP SimplePass</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Conectividad</span><span class="font-semibold text-right text-apple-dark">Wi-Fi 802.11b/g/n y Bluetooth 4.0</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start"><span>Dimensiones y Peso</span><span class="font-semibold text-right text-apple-dark">32.65 x 22.6 x 1.29 cm | 1.36 kg</span></div>
+                                <div class="flex justify-between py-2.5 gap-4 items-start border-t"><span>S.O. Compatible</span><span class="font-semibold text-right text-slate-500">6ta Gen Intel (No soporta Windows 11)</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6 md:space-y-8 h-full flex flex-col justify-between">
+                        <!-- Key Highlights -->
+                        <div class="p-6 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                            <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-music text-apple-link"></i> Audio Premium Bang & Olufsen
+                            </h3>
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                                Diseñado por los expertos daneses de Bang & Olufsen, la misma marca que equipa autos de lujo y sistemas de sonido de alta fidelidad. A diferencia de otras laptops donde el sonido se distorsiona al subir el volumen, la calibración de B&O mantiene la nitidez.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                            <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-battery-full text-emerald-600"></i> Batería Nueva (Instalada en 2025)
+                            </h3>
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                                Polímero de ion de litio de 3 celdas (45 Wh). Reemplazada por una batería nueva a mitad del año 2025 y actualmente su duración es de entre 4 a 5 horas.
+                            </p>
+                        </div>
+
+                        <!-- Honesty Box -->
+                        <div class="p-6 rounded-2xl bg-amber-500/5 border border-amber-500/15">
+                            <h3 class="text-xs font-bold text-amber-700 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-handshake-angle text-amber-600"></i> Transparencia del Estado Físico
+                            </h3>
+                            <p class="text-xs md:text-sm text-slate-600 leading-relaxed italic font-light">
+                                "Usado: muy buen estado. El producto ha tenido un uso cuidado y frecuente pero se mantiene en buenas condiciones de funcionamiento. La notebook tiene un raspón de alrededor de 1 centímetro en el lado izquierdo superior de la tapa. No tiene ningún arañazo ni rayones en la pantalla. El producto cuenta con un teclado retroiluminado que se activa con el mismo teclado. Las bisagras de la pantalla funcionan perfectamente por lo que abrirla y cerrarla no tiene dificultad alguna. El equipo se entrega con cargador original de fábrica funcionando perfectamente y con su caja original de compra."
+                            </p>
+                        </div>
+
+                        <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20HP%20Envy%2013" target="_blank" class="w-full bg-[#0066cc] hover:bg-blue-600 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Adquirir HP Envy por $4,800 MXN
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LTR Auto-scrolling Infinite Real Photography Gallery -->
+                <div class="mt-16 border-t border-blue-200/30 pt-10">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-camera text-blue-500"></i> Galería de Fotos Reales de la Laptop
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">Coloca el cursor (o toca sobre teléfonos) para pausar el carrusel de fotografías. Toca cualquier elemento para expandirlo en pantalla completa instantáneamente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#e0f2fe] rounded-3xl p-4 md:p-6 border border-blue-200/40 shadow-xs overflow-hidden relative select-none">
+                        <div class="w-full overflow-hidden flex">
+                            <!-- Dual/triple sequence to secure infinite seamless motion on ultra wide monitors -->
+                            <div id="envy-marquee-track" class="animate-marquee-ltr gap-4 md:gap-5 py-2">
+                                <!-- JS Duplicates cards dynamically to prevent looping blank segments -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRODUCT 2: Barra de Sonido STF (Lavanda/Lila Pastel) -->
+        <section id="stf-soundbar" class="pastel-section bg-[#f5f3ff] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/f5f3ff/7c3aed?text=Soundbar+STF+Billboard', 'https://placehold.co/800x600/f5f3ff/7c3aed?text=Soundbar+STF+Billboard')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-purple-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/f5f3ff/7c3aed?text=Barra+STF+Billboard" alt="Barra de Sonido STF" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-widest block mb-2">Audio & Entretenimiento</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">Barra de Sonido STF <span class="text-purple-600 block sm:inline font-normal">Billboard</span></h2>
+                    </div>
+                    
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-slate-900">$1,500</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Potencia tu experiencia auditiva con la barra de sonido 2.1 Billboard. Con una estilizada altura de 95 centímetros y un diseño compacto se adapta perfectamente a cualquier consola de televisión o sala.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-purple-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Potencia</span><span class="font-semibold text-right">15W (Barra) y 30W (RMS) Subwoofer</span></div>
+                            <div class="flex justify-between py-2"><span>Medidas Barra</span><span class="font-semibold text-right">6 x 95 x 7 cm</span></div>
+                            <div class="flex justify-between py-2"><span>Medidas Subwoofer</span><span class="font-semibold text-right">27 x 16 x 33 cm</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                        <h4 class="text-xs font-bold text-purple-600 uppercase tracking-widest flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-box text-purple-500"></i> Contenido del empaque
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                            2 barras de audio (se ensamblan), 2 bases de barra de soporte, 1 subwoofer de gran poder, control remoto inalámbrico, adaptador de corriente directa, cable RCA a RCA, cable RCA a AUX de 3.5 mm y su respectivo manual de usuario.
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20Barra%20de%20Sonido%20STF" target="_blank" class="w-full bg-[#7c3aed] hover:bg-purple-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Preguntar por la Barra STF
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 3: Monitor ASUS 27 pulgadas (Fondo Pastel Verde Aqua) -->
+        <section id="asus-2k" class="pastel-section bg-[#f0fdfa] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">Productividad Extrema</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">Monitor ASUS 27" <span class="text-teal-600 font-normal">2K HD</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-slate-900">$2,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Modelo PB27BQ profesional. Alta nitidez y definición de colores ideal para flujos demandantes de oficina, diseño arquitectónico o entretenimiento con claridad cinematográfica.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-teal-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Resolución</span><span class="font-semibold text-right">2K Quad HD (2560 x 1440)</span></div>
+                            <div class="flex justify-between py-2"><span>Entradas de Vídeo</span><span class="font-semibold text-right">DisplayPort, HDMI, DVI, D-Sub (VGA)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/15">
+                        <h3 class="text-xs font-bold text-amber-700 uppercase tracking-widest mb-2.5 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake-angle text-amber-600"></i> Condición Cosmética
+                        </h3>
+                        <p class="text-xs md:text-sm leading-relaxed text-slate-600 italic font-light">
+                            "Muy buen estado, rasguños mínimos apenas perceptibles a 30 centímetros de distancia e imperceptibles al contacto físico ordinario."
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20el%20Monitor%20ASUS" target="_blank" class="w-full bg-[#0d9488] hover:bg-teal-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Monitor ASUS
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2 relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/f0fdfa/0d9488?text=Monitor+ASUS+2K', 'https://placehold.co/800x600/f0fdfa/0d9488?text=Monitor+ASUS+2K')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-teal-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/f0fdfa/0d9488?text=Monitor+ASUS+2K" alt="Monitor ASUS" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 4: Monitor LG 27 Pulgadas (Fondo Pastel Rosa Suave) -->
+        <section id="lg-4k" class="pastel-section bg-[#fff5f5] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/fff5f5/e11d48?text=Monitor+LG+4K', 'https://placehold.co/800x600/fff5f5/e11d48?text=Monitor+LG+4K')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-red-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/fff5f5/e11d48?text=Monitor+LG+4K" alt="Monitor LG" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-6 md:space-y-8 border-slate-200">
+                    <div>
+                        <span class="text-xs font-bold text-red-600 uppercase tracking-widest block mb-2">Ultra Alta Definición</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">Monitor LG 27" <span class="text-red-500 font-normal">4K UHD</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-slate-900">$2,500</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Modelo 27BK67U-B. Definición ultra nativa de nivel profesional enfocada en creadores de multimedia, edición gráfica de fotografía o programadores de sistemas que requieran mucho espacio.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-red-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Resolución Nativa</span><span class="font-semibold text-right">4K Ultra HD (3840 x 2160)</span></div>
+                            <div class="flex justify-between py-2"><span>Entrada de Señal</span><span class="font-semibold text-right">DisplayPort, HDMI, Hub de conexión USB-C</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/15">
+                        <h3 class="text-xs font-bold text-amber-700 uppercase tracking-widest mb-2.5 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake-angle text-amber-600"></i> Estado Cosmético
+                        </h3>
+                        <p class="text-xs md:text-sm leading-relaxed text-slate-600 italic font-light">
+                            "Muy buen estado, arañazos sumamente leves en la carcasa trasera, imperceptibles mirando frontalmente de frente."
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20el%20Monitor%20LG" target="_blank" class="w-full bg-[#e11d48] hover:bg-rose-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Monitor LG
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 5: Tablet Samsung Galaxy Tab S9 Ultra (Fondo Pastel Gris Slate) -->
+        <section id="tab-s9" class="pastel-section bg-[#f1f5f9] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-slate-600 uppercase tracking-widest block mb-2">Productividad y Diseño</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">Galaxy Tab S9 <span class="text-slate-600 font-normal">Ultra Flagship</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-[#1d1d1f]">$13,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        La tableta más grande y potente de Samsung. Ofrece un panel brillante excelente a 120Hz para trabajar de forma modular como si tuvieses una portátil.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Pantalla</span><span class="font-semibold text-right">14.6" Dynamic AMOLED 2X</span></div>
+                            <div class="flex justify-between py-2"><span>Memoria Interna</span><span class="font-semibold text-right">12 GB RAM / 512 GB Almacenamiento</span></div>
+                            <div class="flex justify-between py-2"><span>Accesorios Incluidos</span><span class="font-semibold text-right">S-Pen Original y Funda Protectora</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/15">
+                        <h3 class="text-xs font-bold text-amber-700 uppercase tracking-widest mb-2.5 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake-angle text-amber-600"></i> Salud de Batería y Estado
+                        </h3>
+                        <p class="text-xs md:text-sm leading-relaxed text-slate-600 italic font-light">
+                            "Estado estético excelente. Panel frontal impoluto. Salud física de batería certificada por arriba del 80% de su capacidad nominal original."
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20Samsung%20Galaxy%20Tab%20S9%20Ultra" target="_blank" class="w-full bg-[#475569] hover:bg-slate-800 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar Tab S9 Ultra
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2 relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/f1f5f9/475569?text=Galaxy+Tab+S9+Ultra', 'https://placehold.co/800x600/f1f5f9/475569?text=Galaxy+Tab+S9+Ultra')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-slate-200 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/f1f5f9/475569?text=Galaxy+Tab+S9+Ultra" alt="Galaxy Tab S9 Ultra" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 6: Teléfono Samsung Galaxy S23 FE Desbloqueado (Fondo Pastel Lavanda) -->
+        <section id="s23-fe" class="pastel-section bg-[#faf5ff] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/faf5ff/9333ea?text=Galaxy+S23+FE', 'https://placehold.co/800x600/faf5ff/9333ea?text=Galaxy+S23+FE')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-purple-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/faf5ff/9333ea?text=Galaxy+S23+FE" alt="Galaxy S23 FE" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-widest block mb-2">Movilidad Premium</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">Galaxy S23 FE <span class="text-purple-600 font-normal block sm:inline">256GB</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-[#1d1d1f]">$8,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Modelo totalmente libre de fábrica para operar de forma segura con cualquier compañía celular global. Un smartphone rápido con cámara de grado cinematográfico. Color Violeta Índigo.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-purple-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Almacenamiento</span><span class="font-semibold text-right">256 GB ROM de alta velocidad</span></div>
+                            <div class="flex justify-between py-2"><span>Memoria Interna</span><span class="font-semibold text-right">8 GB RAM</span></div>
+                            <div class="flex justify-between py-2"><span>Extras agregados</span><span class="font-semibold text-right">Galaxy Buds FE y carcasa MagSafe de regalo</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-amber-500/5 border border-amber-500/15">
+                        <h3 class="text-xs font-bold text-amber-700 uppercase tracking-widest mb-2.5 flex items-center gap-2">
+                            <i class="fa-solid fa-handshake-angle text-amber-600"></i> Transparencia del Estado Físico
+                        </h3>
+                        <p class="text-xs md:text-sm leading-relaxed text-slate-600 italic font-light">
+                            "Estética excelente 9.8 de 10. Libre de marcas de golpes, bordes nítidos y sin raspones en cámaras. Salud de batería por encima del 80% original."
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20el%20Samsung%20Galaxy%20S23%20FE" target="_blank" class="w-full bg-[#9333ea] hover:bg-purple-800 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar Galaxy S23 FE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 7: PC Escritorio / Ofimática (Fondo Pastel Verde Menta) -->
+        <section id="pc-ofimatica" class="pastel-section bg-[#f0fdf4] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block mb-2">Estación de Trabajo</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">PC Escritorio <span class="text-emerald-600 font-normal">Ofimática</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-[#1d1d1f]">$4,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        La PC ideal para trabajo escolar, administración escolar, contabilidad o uso diario del hogar. Completamente silenciosa y fresca.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-emerald-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Procesador</span><span class="font-semibold text-right">AMD Athlon 3000G (2C/4T)</span></div>
+                            <div class="flex justify-between py-2"><span>Memoria RAM</span><span class="font-semibold text-right">16 GB RAM DDR4</span></div>
+                            <div class="flex justify-between py-2"><span>Almacenamiento</span><span class="font-semibold text-right">SSD Sólido de 128 GB</span></div>
+                            <div class="flex justify-between py-2"><span>Software Incluido</span><span class="font-semibold text-right">Windows 11 Pro Licenciado</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                        <h4 class="text-xs font-bold text-emerald-600 uppercase tracking-widest flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-box text-emerald-500"></i> Periféricos Incluidos
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                            Teclado y mouse totalmente inalámbricos listos para conexión sin cables, fuente de poder estable de 600W montados sobre un chasis estético con panel de cristal templado lateral.
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20PC%20de%20Escritorio%20para%20Ofimatica" target="_blank" class="w-full bg-[#16a34a] hover:bg-emerald-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar PC Ofimática
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2 relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/f0fdf4/16a34a?text=PC+Ofimatica', 'https://placehold.co/800x600/f0fdf4/16a34a?text=PC+Ofimatica')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-emerald-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/f0fdf4/16a34a?text=PC+Ofimatica" alt="PC Ofimática" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 8: PC Gamer de entrada (Fondo Pastel Azul Soft) -->
+        <section id="pc-gamer" class="pastel-section bg-[#eff6ff] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/eff6ff/2563eb?text=PC+Gamer+Entrada', 'https://placehold.co/800x600/eff6ff/2563eb?text=PC+Gamer+Entrada')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-blue-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/eff6ff/2563eb?text=PC+Gamer+Entrada" alt="PC Gamer Entrada" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-2">Estación de Juego</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-apple-dark tracking-tight leading-none">PC Gamer <span class="text-blue-600 font-normal">de Entrada</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-slate-900">$7,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Ideal para iniciar en el mundo gaming competitivo. Diseñada para juegos tácticos populares como League of Legends, Valorant o Fortnite con gran estabilidad.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-blue-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Gráficos Dedicados</span><span class="font-semibold text-right">NVIDIA GTX 1660 Super 6 GB GDDR6</span></div>
+                            <div class="flex justify-between py-2"><span>Procesador</span><span class="font-semibold text-right">Intel Core i3 de alto desempeño por núcleo</span></div>
+                            <div class="flex justify-between py-2"><span>Memoria RAM</span><span class="font-semibold text-right">16 GB DDR4 optimizada</span></div>
+                            <div class="flex justify-between py-2"><span>Almacenamiento Dual</span><span class="font-semibold text-right">SSD 256 GB (S.O.) y HDD de 500 GB</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                        <h4 class="text-xs font-bold text-blue-600 uppercase tracking-widest flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-plus-circle text-blue-500"></i> Detalles Técnicos Adicionales
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                            Gabinete de diseño gaming con cristal templado transparente, Windows 11 Pro activado, componentes probados exhaustivamente de temperaturas, teclado / mouse inalámbricos y fuente de 600W.
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20PC%20Gamer%20de%20entrada" target="_blank" class="w-full bg-[#2563eb] hover:bg-blue-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar PC Gamer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCT 9: PC Escritorio / Arquitectura (Fondo Pastel Naranja Durazno) -->
+        <section id="pc-arquitectura" class="pastel-section bg-[#fff7ed] py-16 md:py-24 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1 space-y-6 md:space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-orange-600 uppercase tracking-widest block mb-2">Máximo Rendimiento</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-[#1d1d1f] tracking-tight leading-none">PC Arquitectura <span class="text-orange-600 font-normal">y Render brutal</span></h2>
+                    </div>
+
+                    <div class="inline-flex items-baseline gap-2 bg-white/70 backdrop-blur-sm px-5 py-2.5 rounded-2xl border border-white/80 shadow-xs">
+                        <span class="text-4xl font-extrabold text-orange-600">$18,000</span>
+                        <span class="text-xs font-bold text-slate-500">MXN</span>
+                    </div>
+
+                    <p class="text-base md:text-lg text-slate-700 leading-relaxed font-light">
+                        Una verdadera máquina brutal de cómputo profesional diseñada específicamente para modelado tridimensional renderizado en Lumion, V-Ray, AutoCAD, Revit, 3ds Max y análisis masivos.
+                    </p>
+
+                    <div class="bg-white/80 backdrop-blur-xs p-5 md:p-6 rounded-3xl border border-orange-100/80 shadow-xs space-y-3">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 mb-2">Especificaciones Técnicas</h4>
+                        <div class="divide-y divide-slate-100/60 font-sans text-sm text-slate-800">
+                            <div class="flex justify-between py-2"><span>Gráficos de Renders</span><span class="font-semibold text-[#ea580c] text-right">NVIDIA RTX 3070 Ti 8 GB VRAM</span></div>
+                            <div class="flex justify-between py-2"><span>Procesador Multi-Hilo</span><span class="font-semibold text-[#ea580c] text-right">AMD Ryzen 7 (8 Cores/16 Threads)</span></div>
+                            <div class="flex justify-between py-2"><span>Memoria de Trabajo</span><span class="font-semibold text-right">32 GB RAM DDR4</span></div>
+                            <div class="flex justify-between py-2"><span>Almacenamiento SSD</span><span class="font-semibold text-right">1 TB Sólido M.2 NVMe</span></div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-white/70 border border-white/60 shadow-xxs">
+                        <h4 class="text-xs font-bold text-orange-600 uppercase tracking-widest flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-signal text-orange-500"></i> Redes y Estabilidad
+                        </h4>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                            Equipada con adaptador de tarjeta de red integrada avanzada con soporte para WiFi 6 ultrarrápido y Bluetooth, montado en chasis premium con cristal templado, Windows 11 Pro instalado de fábrica y fuente de poder de 750W con certificación.
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20la%20PC%20de%20Escritorio%20para%20Arquitectura" target="_blank" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-2xl text-center text-sm transition-all block shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Consultar PC de Arquitectura
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2 relative group cursor-pointer" onclick="openLightbox('https://placehold.co/800x600/fff7ed/ea580c?text=PC+Arquitectura+RTX', 'https://placehold.co/800x600/fff7ed/ea580c?text=PC+Arquitectura+RTX')">
+                    <div class="aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-orange-100 p-8 flex items-center justify-center shadow-sm group-hover:shadow transition-shadow">
+                        <img src="https://placehold.co/600x450/fff7ed/ea580c?text=PC+Arquitectura+RTX" alt="PC Arquitectura" class="max-h-full object-contain transition-transform group-hover:scale-105 duration-500">
+                        <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-maximize"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- General Footer -->
+    <footer class="bg-slate-950 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 border-b border-slate-800 pb-12">
+            <div>
+                <span class="text-sm font-bold block mb-2 text-[#a1a1a6]">Garantía del trato directo</span>
+                <p class="text-xs text-slate-400">Trato honesto y entrega directa personalizada con verificación al momento en CDMX.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-[10px] text-slate-500 uppercase font-bold tracking-[0.2em]">
+                <span>Caja Original</span>
+                <span>Cargador Original</span>
+                <span>Entrega Inmediata</span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-10 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-600 gap-6">
+            <p>© 2026 Catálogo Premium de Tecnología. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Global Image Lightbox Modal Overlay (Perfect zoom transition) -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-slate-950/95 hidden flex items-center justify-center p-4 backdrop-blur-lg cursor-zoom-out" onclick="closeLightbox()">
+        <div class="relative max-w-5xl max-h-[85vh] w-full flex items-center justify-center" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Ampliación detalle de producto" class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/5 bg-slate-900/50">
+            <button class="absolute -top-12 right-0 bg-white/10 hover:bg-white/20 text-white rounded-full p-2" onclick="closeLightbox()">&times;</button>
+        </div>
+    </div>
+
+    <!-- Floating Trigger CTA's (WhatsApp) -->
+    <a href="https://wa.me/525533501576?text=Hola,%20estoy%20interesado%20en%20los%20equipos" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts de Control -->
     <script>
-        function openLightbox(src) {
+        const totalPhotos = 12;
+
+        // Construir Carrusel Infinito Triple Buffer para el carrusel de HP Envy
+        function buildSeamlessMarquee() {
+            const track = document.getElementById('envy-marquee-track');
+            if(!track) return;
+            track.innerHTML = '';
+
+            // Generar buffer triple (36 elementos) para garantizar que pantallas ultrapanorámicas jamás muestren cortes
+            const loopItems = [
+                ...Array(totalPhotos).keys(), 
+                ...Array(totalPhotos).keys(),
+                ...Array(totalPhotos).keys()
+            ];
+
+            loopItems.forEach((originalIndex, index) => {
+                const pad = String(originalIndex + 1).padStart(2, '0');
+                const imgPathPrimary = `img/hp${pad}.webp`;
+                const imgPathSecondary = `documents/proyectos-web/sale-hp/img/hp${pad}.webp`;
+                
+                const card = document.createElement('div');
+                card.className = 'flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-blue-100 p-3 shadow-xs hover:shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer group flex flex-col justify-between';
+                card.onclick = () => openLightbox(imgPathPrimary, imgPathSecondary);
+
+                card.innerHTML = `
+                    <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2 relative border border-slate-100">
+                        <img src="${imgPathPrimary}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" 
+                             onerror="this.onerror=null; this.src='${imgPathSecondary}'; this.onerror=function(){this.src='https://placehold.co/400x400/e0f2fe/0066cc?text=HP+Envy+${originalIndex+1}'}">
+                        <span class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-black/60 text-white flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fa-solid fa-expand"></i>
+                        </span>
+                    </div>
+                    <div class="mt-3 px-1 flex justify-between items-center shrink-0">
+                        <p class="text-[9px] text-[#86868b] uppercase font-bold tracking-widest leading-none">HP Envy 13</p>
+                        <span class="text-[9px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded-full font-mono">${pad}/12</span>
+                    </div>
+                `;
+                track.appendChild(card);
+            });
+        }
+
+        // Controladores de Lightbox con ruta redundante
+        function openLightbox(primary, secondary) {
             const lb = document.getElementById('lightbox');
             const img = document.getElementById('lightbox-img');
-            img.src = src;
+            if(!lb || !img) return;
+
+            img.src = primary;
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = secondary;
+                this.onerror = function() {
+                    this.src = 'https://placehold.co/800x600/f5f5f7/0066cc?text=Vista+de+Detalle';
+                }
+            };
+            
             lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            if(lb) {
+                lb.classList.add('hidden');
+                lb.classList.remove('flex');
+            }
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Inicializar componentes
+        window.addEventListener('load', () => {
+            buildSeamlessMarquee();
+        });
     </script>
 </body>
 </html>
