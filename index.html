@@ -43,6 +43,28 @@
       scrollbar-width: none;
     }
   </style>
+
+  <!-- Robust image fallback utility that ensures a clean, styled SVG if placehold.co or local assets fail -->
+  <script>
+    function handleImgError(img, primary, secondary, text, bgColor, textColor) {
+      // 1. If we tried the primary path and it failed, try the secondary path
+      if (primary && (img.src.endsWith(primary) || img.src.includes(primary)) && secondary) {
+        img.src = secondary;
+        img.onerror = function() {
+          // If secondary also fails, fallback to local SVG data-URI
+          handleImgError(img, null, null, text, bgColor, textColor);
+        };
+        return;
+      }
+      
+      // 2. Local SVG fallback that works completely offline and bypasses all adblockers
+      const bg = bgColor || '#e0f2fe';
+      const textCol = textColor || '#1e3a8a';
+      const cleanText = encodeURIComponent(text || 'No disponible');
+      img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="${bg.replace('#', '%23')}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="${textCol.replace('#', '%23')}">${cleanText}</text></svg>`;
+      img.onerror = null; // Prevent loop
+    }
+  </script>
 </head>
 <body class="relative min-h-screen bg-[#f5f5f7] text-slate-900 antialiased text-sm">
 
@@ -500,16 +522,16 @@
   <!-- 3. Showcase Hero Banner -->
   <section class="relative min-h-[550px] md:min-h-[70vh] w-full flex items-center justify-center bg-cover bg-center overflow-hidden py-20 px-6" style="background: radial-gradient(circle at top left, #0b111e 0%, #030712 100%)">
     
-    <!-- Autoplayer video -->
+    <!-- Autoplayer video (desktop only) -->
     <video
       id="banner-video"
       autoplay
       loop
       muted
       playsinline
-      oncanplay="this.classList.remove('opacity-0'); this.classList.add('opacity-70'); var img = document.getElementById('banner-static-img'); if(img) { img.classList.remove('opacity-30'); img.classList.add('opacity-0'); }"
-      onplay="this.classList.remove('opacity-0'); this.classList.add('opacity-70'); var img = document.getElementById('banner-static-img'); if(img) { img.classList.remove('opacity-30'); img.classList.add('opacity-0'); }"
-      class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 pointer-events-none opacity-0"
+      oncanplay="this.classList.remove('opacity-0'); this.classList.add('opacity-70');"
+      onplay="this.classList.remove('opacity-0'); this.classList.add('opacity-70');"
+      class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 pointer-events-none opacity-0 hidden md:block"
     >
       <source src="documents/proyectos-web/sale-hp/video/banner.webm" type="video/webm" />
       <source src="documents/proyectos-web/sale-hp/img/banner01.webm" type="video/webm" />
@@ -519,17 +541,18 @@
       <source src="banner.webm" type="video/webm" />
     </video>
 
-    <!-- Fallback static image -->
+    <!-- Fallback static image (mobile only) -->
     <img
       id="banner-static-img"
       src="documents/proyectos-web/sale-hp/img/banner01.webp"
       alt="Atmosphere"
-      class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity z-0 pointer-events-none transition-opacity duration-1000"
+      class="absolute inset-0 w-full h-full object-cover opacity-75 z-0 pointer-events-none transition-opacity duration-1000 block md:hidden"
       onerror="if(this.src !== 'img/banner01.webp') this.src = 'img/banner01.webp';"
     />
 
     <!-- Modern gradient overlay over backgrounds to ensure elegant contrast & text readability -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#f5f5f7] via-slate-950/45 to-slate-950/75 z-0 pointer-events-none"></div>
+    <!-- Lightened by 20% on mobile (opacity 25% and 55% instead of 45% and 75%) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#f5f5f7] via-slate-950/25 to-slate-950/55 md:via-slate-950/45 md:to-slate-950/75 z-0 pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto text-center relative z-10 space-y-6 md:space-y-8">
       <div class="inline-flex items-center gap-1.5 px-3 py-1 mb-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-xs font-semibold tracking-wider uppercase">
@@ -733,7 +756,7 @@
                 src="img/mac1.webp" 
                 alt="Apple Mac Mini Desktop" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='documents/proyectos-web/sale-hp/img/mac1.webp';"
+                onerror="handleImgError(this, 'img/mac1.webp', 'documents/proyectos-web/sale-hp/img/mac1.webp', 'Apple Mac Mini Desktop', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -1253,7 +1276,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
                 src="img/hp01.webp" 
                 alt="HP Envy 13" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='documents/proyectos-web/sale-hp/img/hp01.webp';"
+                onerror="handleImgError(this, 'img/hp01.webp', 'documents/proyectos-web/sale-hp/img/hp01.webp', 'HP Envy 13', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2227,14 +2250,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=PC%20Ofim%C3%A1tica', 'https://placehold.co/800x600/f3f4f6/000000?text=PC%20Ofim%C3%A1tica')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=PC%20Ofim%C3%A1tica', 'https://placehold.co/800x600/e0f2fe/000000?text=PC%20Ofim%C3%A1tica')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=PC%20Ofim%C3%A1tica" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=PC%20Ofim%C3%A1tica" 
                 alt="PC Ofimática" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=PC%20Ofim%C3%A1tica';"
+                onerror="handleImgError(this, null, null, 'PC Ofimática', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2340,14 +2363,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=PC%20Gamer%20Entrada', 'https://placehold.co/800x600/f3f4f6/000000?text=PC%20Gamer%20Entrada')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=PC%20Gamer%20Entrada', 'https://placehold.co/800x600/e0f2fe/000000?text=PC%20Gamer%20Entrada')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=PC%20Gamer%20Entrada" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=PC%20Gamer%20Entrada" 
                 alt="PC Gamer Entrada" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=PC%20Gamer%20Entrada';"
+                onerror="handleImgError(this, null, null, 'PC Gamer Entrada', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2453,14 +2476,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=PC%20Arquitectura%20RTX', 'https://placehold.co/800x600/f3f4f6/000000?text=PC%20Arquitectura%20RTX')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=PC%20Arquitectura%20RTX', 'https://placehold.co/800x600/e0f2fe/000000?text=PC%20Arquitectura%20RTX')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=PC%20Arquitectura%20RTX" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=PC%20Arquitectura%20RTX" 
                 alt="PC Arquitectura Render" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=PC%20Arquitectura%20RTX';"
+                onerror="handleImgError(this, null, null, 'PC Arquitectura Render', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2561,14 +2584,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20ASUS%202K', 'https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20ASUS%202K')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20ASUS%202K', 'https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20ASUS%202K')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20ASUS%202K" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20ASUS%202K" 
                 alt="Monitor ASUS 27"" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20ASUS%202K';"
+                onerror="handleImgError(this, null, null, 'Monitor ASUS 27"', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2669,14 +2692,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20LG%204K', 'https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20LG%204K')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20LG%204K', 'https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20LG%204K')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20LG%204K" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=Monitor%20LG%204K" 
                 alt="Monitor LG 27"" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=Monitor%20LG%204K';"
+                onerror="handleImgError(this, null, null, 'Monitor LG 27"', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2782,14 +2805,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20Tab%20S9%20Ultra', 'https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20Tab%20S9%20Ultra')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20Tab%20S9%20Ultra', 'https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20Tab%20S9%20Ultra')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20Tab%20S9%20Ultra" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20Tab%20S9%20Ultra" 
                 alt="Galaxy Tab S9 Ultra" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20Tab%20S9%20Ultra';"
+                onerror="handleImgError(this, null, null, 'Galaxy Tab S9 Ultra', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -2905,14 +2928,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20S23%20FE', 'https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20S23%20FE')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20S23%20FE', 'https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20S23%20FE')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20S23%20FE" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=Galaxy%20S23%20FE" 
                 alt="Galaxy S23 FE" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=Galaxy%20S23%20FE';"
+                onerror="handleImgError(this, null, null, 'Galaxy S23 FE', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -3030,7 +3053,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
                 src="img/keyboard1.webp" 
                 alt="HP Teclado Inalámbrico 350" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='documents/proyectos-web/sale-hp/img/keyboard1.webp';"
+                onerror="handleImgError(this, 'img/keyboard1.webp', 'documents/proyectos-web/sale-hp/img/keyboard1.webp', 'HP Teclado Inalámbrico 350', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -3647,7 +3670,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
                 src="img/impresora01.webp" 
                 alt="Impresora HP DeskJet Ink Advantage 2135" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='documents/proyectos-web/sale-hp/img/impresora01.webp';"
+                onerror="handleImgError(this, 'img/impresora01.webp', 'documents/proyectos-web/sale-hp/img/impresora01.webp', 'Impresora HP DeskJet Ink Advantage 2135', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -3997,7 +4020,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
                 src="img/caja01.webp" 
                 alt="Portafolio Multiusos Iris de Plástico" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='documents/proyectos-web/sale-hp/img/caja01.webp';"
+                onerror="handleImgError(this, 'img/caja01.webp', 'documents/proyectos-web/sale-hp/img/caja01.webp', 'Portafolio Multiusos Iris de Plástico', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
@@ -4744,14 +4767,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
           <div class="flex flex-col justify-between space-y-6 md:space-y-8 h-full">
             
             <div 
-              onclick="openLightbox('https://placehold.co/800x600/f3f4f6/000000?text=Soundbar%20STF%20Billboard', 'https://placehold.co/800x600/f3f4f6/000000?text=Soundbar%20STF%20Billboard')"
+              onclick="openLightbox('https://placehold.co/800x600/e0f2fe/000000?text=Soundbar%20STF%20Billboard', 'https://placehold.co/800x600/e0f2fe/000000?text=Soundbar%20STF%20Billboard')"
               class="relative aspect-[4/3] w-full rounded-3xl overflow-hidden bg-white border border-slate-100 p-6 md:p-8 flex items-center justify-center shadow-sm select-none group cursor-pointer hover:shadow-md transition-shadow active:scale-[0.99]"
             >
               <img 
-                src="https://placehold.co/800x600/f3f4f6/000000?text=Soundbar%20STF%20Billboard" 
+                src="https://placehold.co/800x600/e0f2fe/000000?text=Soundbar%20STF%20Billboard" 
                 alt="Barra de Sonido STF" 
                 class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/f3f4f6/000000?text=Soundbar%20STF%20Billboard';"
+                onerror="handleImgError(this, null, null, 'Barra de Sonido STF', '#e0f2fe', '#0f172a')"
               />
               <span class="absolute bottom-4 right-4 bg-slate-950/75 backdrop-blur-md text-white w-8 h-8 rounded-full flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
                 <i data-lucide="maximize-2" class="text-white w-4 h-4"></i>
