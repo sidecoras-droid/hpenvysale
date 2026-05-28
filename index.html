@@ -57,11 +57,12 @@
         return;
       }
       
-      // 2. Local SVG fallback that works completely offline and bypasses all adblockers
+      // 2. Local SVG fallback that works completely offline and bypasses all adblockers and mobile restrictions
       const bg = bgColor || '#e0f2fe';
       const textCol = textColor || '#1e3a8a';
-      const cleanText = encodeURIComponent(text || 'No disponible');
-      img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="${bg.replace('#', '%23')}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="${textCol.replace('#', '%23')}">${cleanText}</text></svg>`;
+      const cleanText = text || 'No disponible';
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="${bg}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="${textCol}">${cleanText}</text></svg>`;
+      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
       img.onerror = null; // Prevent loop
     }
   </script>
