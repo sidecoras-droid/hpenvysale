@@ -62,7 +62,7 @@
       const textCol = textColor || '#1e3a8a';
       const cleanText = text || 'No disponible';
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450"><rect width="100%" height="100%" fill="${bg}"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="${textCol}">${cleanText}</text></svg>`;
-      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svg)));
       img.onerror = null; // Prevent loop
     }
   </script>
@@ -817,7 +817,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac1.webp', 'documents/proyectos-web/sale-hp/img/mac1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac1.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -840,7 +840,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac2.webp', 'documents/proyectos-web/sale-hp/img/mac2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac2.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -863,7 +863,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac3.webp', 'documents/proyectos-web/sale-hp/img/mac3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac3.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -886,7 +886,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac4.webp', 'documents/proyectos-web/sale-hp/img/mac4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac4.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -909,7 +909,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac5.webp', 'documents/proyectos-web/sale-hp/img/mac5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac5.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -932,7 +932,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac1.webp', 'documents/proyectos-web/sale-hp/img/mac1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac1.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -955,7 +955,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac2.webp', 'documents/proyectos-web/sale-hp/img/mac2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac2.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -978,7 +978,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac3.webp', 'documents/proyectos-web/sale-hp/img/mac3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac3.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1001,7 +1001,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac4.webp', 'documents/proyectos-web/sale-hp/img/mac4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac4.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1024,7 +1024,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac5.webp', 'documents/proyectos-web/sale-hp/img/mac5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac5.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1047,7 +1047,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac1.webp', 'documents/proyectos-web/sale-hp/img/mac1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac1.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1070,7 +1070,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac2.webp', 'documents/proyectos-web/sale-hp/img/mac2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac2.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1093,7 +1093,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac3.webp', 'documents/proyectos-web/sale-hp/img/mac3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac3.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1116,7 +1116,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac4.webp', 'documents/proyectos-web/sale-hp/img/mac4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac4.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1139,7 +1139,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/mac5.webp', 'documents/proyectos-web/sale-hp/img/mac5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/mac5.webp" 
                   alt="Apple Mac Mini Desktop" 
@@ -1355,7 +1355,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp01.webp', 'documents/proyectos-web/sale-hp/img/hp01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp01.webp" 
                   alt="HP Envy 13" 
@@ -1378,7 +1378,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp02.webp', 'documents/proyectos-web/sale-hp/img/hp02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp02.webp" 
                   alt="HP Envy 13" 
@@ -1401,7 +1401,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp03.webp', 'documents/proyectos-web/sale-hp/img/hp03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp03.webp" 
                   alt="HP Envy 13" 
@@ -1424,7 +1424,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp04.webp', 'documents/proyectos-web/sale-hp/img/hp04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp04.webp" 
                   alt="HP Envy 13" 
@@ -1447,7 +1447,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp05.webp', 'documents/proyectos-web/sale-hp/img/hp05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp05.webp" 
                   alt="HP Envy 13" 
@@ -1470,7 +1470,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp06.webp', 'documents/proyectos-web/sale-hp/img/hp06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp06.webp" 
                   alt="HP Envy 13" 
@@ -1493,7 +1493,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp07.webp', 'documents/proyectos-web/sale-hp/img/hp07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp07.webp" 
                   alt="HP Envy 13" 
@@ -1516,7 +1516,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp08.webp', 'documents/proyectos-web/sale-hp/img/hp08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp08.webp" 
                   alt="HP Envy 13" 
@@ -1539,7 +1539,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp09.webp', 'documents/proyectos-web/sale-hp/img/hp09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp09.webp" 
                   alt="HP Envy 13" 
@@ -1562,7 +1562,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp10.webp', 'documents/proyectos-web/sale-hp/img/hp10.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp10.webp" 
                   alt="HP Envy 13" 
@@ -1585,7 +1585,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp11.webp', 'documents/proyectos-web/sale-hp/img/hp11.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp11.webp" 
                   alt="HP Envy 13" 
@@ -1608,7 +1608,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp12.webp', 'documents/proyectos-web/sale-hp/img/hp12.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp12.webp" 
                   alt="HP Envy 13" 
@@ -1631,7 +1631,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp01.webp', 'documents/proyectos-web/sale-hp/img/hp01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp01.webp" 
                   alt="HP Envy 13" 
@@ -1654,7 +1654,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp02.webp', 'documents/proyectos-web/sale-hp/img/hp02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp02.webp" 
                   alt="HP Envy 13" 
@@ -1677,7 +1677,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp03.webp', 'documents/proyectos-web/sale-hp/img/hp03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp03.webp" 
                   alt="HP Envy 13" 
@@ -1700,7 +1700,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp04.webp', 'documents/proyectos-web/sale-hp/img/hp04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp04.webp" 
                   alt="HP Envy 13" 
@@ -1723,7 +1723,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp05.webp', 'documents/proyectos-web/sale-hp/img/hp05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp05.webp" 
                   alt="HP Envy 13" 
@@ -1746,7 +1746,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp06.webp', 'documents/proyectos-web/sale-hp/img/hp06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp06.webp" 
                   alt="HP Envy 13" 
@@ -1769,7 +1769,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp07.webp', 'documents/proyectos-web/sale-hp/img/hp07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp07.webp" 
                   alt="HP Envy 13" 
@@ -1792,7 +1792,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp08.webp', 'documents/proyectos-web/sale-hp/img/hp08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp08.webp" 
                   alt="HP Envy 13" 
@@ -1815,7 +1815,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp09.webp', 'documents/proyectos-web/sale-hp/img/hp09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp09.webp" 
                   alt="HP Envy 13" 
@@ -1838,7 +1838,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp10.webp', 'documents/proyectos-web/sale-hp/img/hp10.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp10.webp" 
                   alt="HP Envy 13" 
@@ -1861,7 +1861,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp11.webp', 'documents/proyectos-web/sale-hp/img/hp11.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp11.webp" 
                   alt="HP Envy 13" 
@@ -1884,7 +1884,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp12.webp', 'documents/proyectos-web/sale-hp/img/hp12.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp12.webp" 
                   alt="HP Envy 13" 
@@ -1907,7 +1907,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp01.webp', 'documents/proyectos-web/sale-hp/img/hp01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp01.webp" 
                   alt="HP Envy 13" 
@@ -1930,7 +1930,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp02.webp', 'documents/proyectos-web/sale-hp/img/hp02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp02.webp" 
                   alt="HP Envy 13" 
@@ -1953,7 +1953,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp03.webp', 'documents/proyectos-web/sale-hp/img/hp03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp03.webp" 
                   alt="HP Envy 13" 
@@ -1976,7 +1976,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp04.webp', 'documents/proyectos-web/sale-hp/img/hp04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp04.webp" 
                   alt="HP Envy 13" 
@@ -1999,7 +1999,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp05.webp', 'documents/proyectos-web/sale-hp/img/hp05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp05.webp" 
                   alt="HP Envy 13" 
@@ -2022,7 +2022,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp06.webp', 'documents/proyectos-web/sale-hp/img/hp06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp06.webp" 
                   alt="HP Envy 13" 
@@ -2045,7 +2045,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp07.webp', 'documents/proyectos-web/sale-hp/img/hp07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp07.webp" 
                   alt="HP Envy 13" 
@@ -2068,7 +2068,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp08.webp', 'documents/proyectos-web/sale-hp/img/hp08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp08.webp" 
                   alt="HP Envy 13" 
@@ -2091,7 +2091,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp09.webp', 'documents/proyectos-web/sale-hp/img/hp09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp09.webp" 
                   alt="HP Envy 13" 
@@ -2114,7 +2114,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp10.webp', 'documents/proyectos-web/sale-hp/img/hp10.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp10.webp" 
                   alt="HP Envy 13" 
@@ -2137,7 +2137,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp11.webp', 'documents/proyectos-web/sale-hp/img/hp11.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp11.webp" 
                   alt="HP Envy 13" 
@@ -2160,7 +2160,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/hp12.webp', 'documents/proyectos-web/sale-hp/img/hp12.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/hp12.webp" 
                   alt="HP Envy 13" 
@@ -3112,7 +3112,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard1.webp', 'documents/proyectos-web/sale-hp/img/keyboard1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard1.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3135,7 +3135,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard2.webp', 'documents/proyectos-web/sale-hp/img/keyboard2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard2.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3158,7 +3158,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard3.webp', 'documents/proyectos-web/sale-hp/img/keyboard3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard3.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3181,7 +3181,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard4.webp', 'documents/proyectos-web/sale-hp/img/keyboard4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard4.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3204,7 +3204,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard5.webp', 'documents/proyectos-web/sale-hp/img/keyboard5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard5.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3227,7 +3227,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard6.webp', 'documents/proyectos-web/sale-hp/img/keyboard6.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard6.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3250,7 +3250,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard1.webp', 'documents/proyectos-web/sale-hp/img/keyboard1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard1.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3273,7 +3273,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard2.webp', 'documents/proyectos-web/sale-hp/img/keyboard2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard2.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3296,7 +3296,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard3.webp', 'documents/proyectos-web/sale-hp/img/keyboard3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard3.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3319,7 +3319,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard4.webp', 'documents/proyectos-web/sale-hp/img/keyboard4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard4.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3342,7 +3342,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard5.webp', 'documents/proyectos-web/sale-hp/img/keyboard5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard5.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3365,7 +3365,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard6.webp', 'documents/proyectos-web/sale-hp/img/keyboard6.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard6.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3388,7 +3388,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard1.webp', 'documents/proyectos-web/sale-hp/img/keyboard1.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard1.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3411,7 +3411,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard2.webp', 'documents/proyectos-web/sale-hp/img/keyboard2.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard2.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3434,7 +3434,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard3.webp', 'documents/proyectos-web/sale-hp/img/keyboard3.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard3.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3457,7 +3457,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard4.webp', 'documents/proyectos-web/sale-hp/img/keyboard4.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard4.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3480,7 +3480,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard5.webp', 'documents/proyectos-web/sale-hp/img/keyboard5.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard5.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3503,7 +3503,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/keyboard6.webp', 'documents/proyectos-web/sale-hp/img/keyboard6.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/keyboard6.webp" 
                   alt="HP Teclado Inalámbrico 350" 
@@ -3729,7 +3729,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora01.webp', 'documents/proyectos-web/sale-hp/img/impresora01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora01.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3752,7 +3752,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora02.webp', 'documents/proyectos-web/sale-hp/img/impresora02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora02.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3775,7 +3775,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora03.webp', 'documents/proyectos-web/sale-hp/img/impresora03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora03.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3798,7 +3798,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora01.webp', 'documents/proyectos-web/sale-hp/img/impresora01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora01.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3821,7 +3821,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora02.webp', 'documents/proyectos-web/sale-hp/img/impresora02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora02.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3844,7 +3844,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora03.webp', 'documents/proyectos-web/sale-hp/img/impresora03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora03.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3867,7 +3867,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora01.webp', 'documents/proyectos-web/sale-hp/img/impresora01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora01.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3890,7 +3890,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora02.webp', 'documents/proyectos-web/sale-hp/img/impresora02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora02.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -3913,7 +3913,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/impresora03.webp', 'documents/proyectos-web/sale-hp/img/impresora03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/impresora03.webp" 
                   alt="Impresora HP DeskJet Ink Advantage 2135" 
@@ -4079,7 +4079,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja01.webp', 'documents/proyectos-web/sale-hp/img/caja01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja01.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4102,7 +4102,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja02.webp', 'documents/proyectos-web/sale-hp/img/caja02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja02.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4125,7 +4125,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja03.webp', 'documents/proyectos-web/sale-hp/img/caja03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja03.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4148,7 +4148,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja04.webp', 'documents/proyectos-web/sale-hp/img/caja04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja04.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4171,7 +4171,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja05.webp', 'documents/proyectos-web/sale-hp/img/caja05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja05.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4194,7 +4194,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja06.webp', 'documents/proyectos-web/sale-hp/img/caja06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja06.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4217,7 +4217,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja07.webp', 'documents/proyectos-web/sale-hp/img/caja07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja07.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4240,7 +4240,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja08.webp', 'documents/proyectos-web/sale-hp/img/caja08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja08.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4263,7 +4263,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja09.webp', 'documents/proyectos-web/sale-hp/img/caja09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja09.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4286,7 +4286,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja01.webp', 'documents/proyectos-web/sale-hp/img/caja01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja01.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4309,7 +4309,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja02.webp', 'documents/proyectos-web/sale-hp/img/caja02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja02.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4332,7 +4332,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja03.webp', 'documents/proyectos-web/sale-hp/img/caja03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja03.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4355,7 +4355,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja04.webp', 'documents/proyectos-web/sale-hp/img/caja04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja04.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4378,7 +4378,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja05.webp', 'documents/proyectos-web/sale-hp/img/caja05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja05.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4401,7 +4401,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja06.webp', 'documents/proyectos-web/sale-hp/img/caja06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja06.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4424,7 +4424,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja07.webp', 'documents/proyectos-web/sale-hp/img/caja07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja07.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4447,7 +4447,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja08.webp', 'documents/proyectos-web/sale-hp/img/caja08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja08.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4470,7 +4470,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja09.webp', 'documents/proyectos-web/sale-hp/img/caja09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja09.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4493,7 +4493,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja01.webp', 'documents/proyectos-web/sale-hp/img/caja01.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja01.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4516,7 +4516,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja02.webp', 'documents/proyectos-web/sale-hp/img/caja02.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja02.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4539,7 +4539,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja03.webp', 'documents/proyectos-web/sale-hp/img/caja03.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja03.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4562,7 +4562,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja04.webp', 'documents/proyectos-web/sale-hp/img/caja04.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja04.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4585,7 +4585,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja05.webp', 'documents/proyectos-web/sale-hp/img/caja05.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja05.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4608,7 +4608,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja06.webp', 'documents/proyectos-web/sale-hp/img/caja06.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja06.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4631,7 +4631,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja07.webp', 'documents/proyectos-web/sale-hp/img/caja07.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja07.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4654,7 +4654,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja08.webp', 'documents/proyectos-web/sale-hp/img/caja08.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja08.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -4677,7 +4677,7 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
               onclick="openLightbox('img/caja09.webp', 'documents/proyectos-web/sale-hp/img/caja09.webp')"
               class="flex-none w-[180px] md:w-[240px] bg-white rounded-2xl border border-slate-100 p-3 shadow-xs hover:shadow-md hover:scale-[1.03] active:scale-95 transition-all cursor-pointer group flex flex-col justify-between"
             >
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
+              <div class="aspect-[16/10] h-[112px] md:h-[150px] w-full rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-2.5 relative border border-slate-100">
                 <img 
                   src="img/caja09.webp" 
                   alt="Portafolio Multiusos Iris de Plástico" 
@@ -5102,6 +5102,14 @@ A considerar: el equipo se entrega sin caja y solamente con el cable de corrient
     // Initialize static view showing first category index on page load
     document.addEventListener('DOMContentLoaded', function() {
       updateActiveCategory('apple');
+    });
+
+    // Force scroll to top on initial page load (especially helpful on mobile browsers and iframes)
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+      setTimeout(function() {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 50);
     });
   </script>
 </body>
